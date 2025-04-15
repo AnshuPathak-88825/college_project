@@ -1,0 +1,283 @@
+2025-01-27 03:19:51: Performing initial scan: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:19:51: Started monitoring: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:19:52: Virus detected in: C:\Users\Ved\Documents\WindowsPowerShell\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40.elf
+2025-01-27 03:19:52: File moved to quarantine: C:\Users\Ved\Desktop\CyberPanacea V2.0\CyberPanacea V2.0\CyberPanacea V2.0\bin\Debug\net8.0-windows\win-x64\Quarantine\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40.elf
+2025-01-27 03:19:52: Error sending email: The value cannot be an empty string. (Parameter 'from')
+2025-01-27 03:22:06: Performing initial scan: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:22:06: Started monitoring: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:22:24: Virus detected in: C:\Users\Ved\Documents\WindowsPowerShell\217c37e7c32187616ece92b2a79d53b7bbdcdddb4fd34defaf3a1a59e5f641c2.exe
+2025-01-27 03:22:24: File moved to quarantine: C:\Users\Ved\Desktop\CyberPanacea V2.0\CyberPanacea V2.0\CyberPanacea V2.0\bin\Debug\net8.0-windows\win-x64\Quarantine\217c37e7c32187616ece92b2a79d53b7bbdcdddb4fd34defaf3a1a59e5f641c2.exe
+2025-01-27 03:22:24: Error sending email: The value cannot be an empty string. (Parameter 'from')
+2025-01-27 03:23:29: Performing initial scan: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:23:29: Started monitoring: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:27:30: Performing initial scan: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:28:03: Performing initial scan: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:35:09: Started monitoring folder: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:35:09: Found 36 files in C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:35:12: Error in scan completion monitor: The CancellationTokenSource has been disposed.
+2025-01-27 03:35:55: Started monitoring folder: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:35:55: Found 36 files in C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:35:55: Started monitoring folder: C:\Users\Ved\Downloads
+2025-01-27 03:35:55: Found 8 files in C:\Users\Ved\Downloads
+2025-01-27 03:35:55: Error setting up monitoring for C:\Users\Ved\Downloads: The CancellationTokenSource has been disposed.
+2025-01-27 03:35:57: Error in scan completion monitor: The CancellationTokenSource has been disposed.
+2025-01-27 03:40:31: Starting initial scan of: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:40:31: Started monitoring: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:40:31: Starting initial scan of: C:\Users\Ved\Downloads
+2025-01-27 03:40:31: Started monitoring: C:\Users\Ved\Downloads
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Threat detected in: C:\Users\Ved\Documents\WindowsPowerShell\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40.elf
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: File quarantined: C:\Users\Ved\Documents\WindowsPowerShell\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40.elf -> C:\Users\Ved\Desktop\CyberPanacea V2.0\CyberPanacea V2.0\CyberPanacea V2.0\bin\Debug\net8.0-windows\win-x64\Quarantine\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40_1.elf
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:34: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:34: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:34: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:34: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:34: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:35: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:35: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:37: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:38: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:40:51: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:07: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:29: Starting initial scan of: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:41:29: Started monitoring: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:41:29: Starting initial scan of: C:\Users\Ved\Downloads
+2025-01-27 03:41:29: Started monitoring: C:\Users\Ved\Downloads
+2025-01-27 03:41:30: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:30: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:30: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:30: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:30: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:30: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:30: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:30: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Threat detected in: C:\Users\Ved\Documents\WindowsPowerShell\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40.elf
+2025-01-27 03:41:31: File quarantined: C:\Users\Ved\Documents\WindowsPowerShell\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40.elf -> C:\Users\Ved\Desktop\CyberPanacea V2.0\CyberPanacea V2.0\CyberPanacea V2.0\bin\Debug\net8.0-windows\win-x64\Quarantine\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40_2.elf
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:31: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:32: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:33: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:35: Starting initial scan of: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:41:35: Started monitoring: C:\Users\Ved\Documents\WindowsPowerShell
+2025-01-27 03:41:35: Starting initial scan of: C:\Users\Ved\Downloads
+2025-01-27 03:41:35: Started monitoring: C:\Users\Ved\Downloads
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:36: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:37: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:37: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:37: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:37: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:37: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:37: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:37: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:37: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:37: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+2025-01-27 03:41:38: Worker task error: Cannot access a disposed object.
+Object name: 'System.Threading.SemaphoreSlim'.
+27-01-2025 03:44:40: Starting initial scan of: C:\Users\Ved\Documents\WindowsPowerShell
+27-01-2025 03:44:40: Started monitoring: C:\Users\Ved\Documents\WindowsPowerShell
+27-01-2025 03:44:40: Starting initial scan of: C:\Users\Ved\Downloads
+27-01-2025 03:44:40: Started monitoring: C:\Users\Ved\Downloads
+27-01-2025 03:44:42: Threat detected in: C:\Users\Ved\Documents\WindowsPowerShell\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40.elf
+27-01-2025 03:44:42: Error quarantining file C:\Users\Ved\Documents\WindowsPowerShell\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40.elf: Cannot create a file when that file already exists.
+27-01-2025 03:46:02: Starting initial scan of: C:\Users\Ved\Documents\WindowsPowerShell
+27-01-2025 03:46:02: Started monitoring: C:\Users\Ved\Documents\WindowsPowerShell
+27-01-2025 03:46:02: Starting initial scan of: C:\Users\Ved\Downloads
+27-01-2025 03:46:02: Started monitoring: C:\Users\Ved\Downloads
+27-01-2025 03:46:03: Threat detected in: C:\Users\Ved\Documents\WindowsPowerShell\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40.elf
+27-01-2025 03:46:03: Error quarantining file C:\Users\Ved\Documents\WindowsPowerShell\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40.elf: Cannot create a file when that file already exists.
+27-01-2025 03:46:05: Threat detected in: C:\Users\Ved\Documents\WindowsPowerShell\217c37e7c32187616ece92b2a79d53b7bbdcdddb4fd34defaf3a1a59e5f641c2.exe
+27-01-2025 03:46:05: Error quarantining file C:\Users\Ved\Documents\WindowsPowerShell\217c37e7c32187616ece92b2a79d53b7bbdcdddb4fd34defaf3a1a59e5f641c2.exe: Cannot create a file when that file already exists.
+27-01-2025 03:46:13: Starting initial scan of: C:\Users\Ved\Documents\WindowsPowerShell
+27-01-2025 03:46:13: Started monitoring: C:\Users\Ved\Documents\WindowsPowerShell
+27-01-2025 03:46:13: Starting initial scan of: C:\Users\Ved\Downloads
+27-01-2025 03:46:13: Started monitoring: C:\Users\Ved\Downloads
+27-01-2025 03:46:14: Threat detected in: C:\Users\Ved\Documents\WindowsPowerShell\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40.elf
+27-01-2025 03:46:14: Error quarantining file C:\Users\Ved\Documents\WindowsPowerShell\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40.elf: Cannot create a file when that file already exists.
+27-01-2025 03:46:16: Threat detected in: C:\Users\Ved\Documents\WindowsPowerShell\217c37e7c32187616ece92b2a79d53b7bbdcdddb4fd34defaf3a1a59e5f641c2.exe
+27-01-2025 03:46:16: Error quarantining file C:\Users\Ved\Documents\WindowsPowerShell\217c37e7c32187616ece92b2a79d53b7bbdcdddb4fd34defaf3a1a59e5f641c2.exe: Cannot create a file when that file already exists.
+27-01-2025 03:47:18: Starting initial scan of: C:\Users\Ved\Documents\WindowsPowerShell
+27-01-2025 03:47:18: Started monitoring: C:\Users\Ved\Documents\WindowsPowerShell
+27-01-2025 03:47:18: Starting initial scan of: C:\Users\Ved\Downloads
+27-01-2025 03:47:18: Started monitoring: C:\Users\Ved\Downloads
+27-01-2025 03:47:20: Threat detected in: C:\Users\Ved\Documents\WindowsPowerShell\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40.elf
+27-01-2025 03:47:20: File quarantined successfully: C:\Users\Ved\Desktop\CyberPanacea V2.0\CyberPanacea V2.0\CyberPanacea V2.0\bin\Debug\net8.0-windows\win-x64\Quarantine\1f3f2cbdf23fb60bf9b16077eb7fd759c0af7b48ddbbc2f41cee8080a037bc40_20250127_034720016.elf
+27-01-2025 03:47:21: Threat detected in: C:\Users\Ved\Documents\WindowsPowerShell\217c37e7c32187616ece92b2a79d53b7bbdcdddb4fd34defaf3a1a59e5f641c2.exe
+27-01-2025 03:47:21: File quarantined successfully: C:\Users\Ved\Desktop\CyberPanacea V2.0\CyberPanacea V2.0\CyberPanacea V2.0\bin\Debug\net8.0-windows\win-x64\Quarantine\217c37e7c32187616ece92b2a79d53b7bbdcdddb4fd34defaf3a1a59e5f641c2_20250127_034721554.exe

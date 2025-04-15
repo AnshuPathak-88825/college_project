@@ -1,0 +1,17 @@
+{
+  "EnableIdsAlerts": true,
+  "EnableDosAlerts": false,
+  "EnableRansomwareAlerts": false,
+  "MonitoredPorts": [
+    80,
+    443,
+    8080,
+    22
+  ],
+  "WhitelistedIPs": [
+    "127.0.0.1"
+  ],
+  "BlacklistedIPs": [],
+  "PrimaryEmail": "",
+  "AdditionalRecipients": []
+}

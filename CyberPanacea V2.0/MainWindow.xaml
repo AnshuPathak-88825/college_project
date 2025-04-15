@@ -1,0 +1,1563 @@
+﻿<Window 
+    x:Class="CyberPanacea_V2._0.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:local="clr-namespace:CyberPanacea_V2._0"
+    mc:Ignorable="d"
+    Title="Cyber Panacea"
+    MinWidth="800"
+    MinHeight="600"
+    Width="1080"
+    Height="720"
+    WindowStartupLocation="CenterScreen"
+    Background="Transparent"
+    WindowStyle="None"
+    AllowsTransparency="True"
+    AutomationProperties.Name="Cyber Panacea Security Application"
+    >
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+        <!-- Menu Button Style -->
+        <Style x:Key="menuButton" TargetType="Button">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#ffffff"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#ffffff"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Text Styles -->
+        <Style x:Key="titleText" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="34"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+        </Style>
+
+        <Style x:Key="headerText" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="50"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="0 10"/>
+        </Style>
+
+        <Style x:Key="descriptionText" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+
+        <!-- Modern Styles -->
+        <Style x:Key="ModernTabControl" TargetType="TabControl">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+
+        <Style x:Key="ModernTabItem" TargetType="TabItem">
+            <Setter Property="Background" Value="#155777"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="15,10"/>
+        </Style>
+
+        <Style x:Key="ModernActionButton" TargetType="Button">
+            <Setter Property="Background" Value="#155777"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ModernDeleteButton" TargetType="Button">
+            <Setter Property="Background" Value="#dc3545"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ModernButton" TargetType="Button">
+            <Setter Property="Background" Value="#007AFF"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="16,8"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="6">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ModernDataGrid" TargetType="DataGrid">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            <Setter Property="RowBackground" Value="White"/>
+            <Setter Property="AlternatingRowBackground" Value="#F8F9FA"/>
+            <Setter Property="GridLinesVisibility" Value="None"/>
+            <Setter Property="RowHeaderWidth" Value="0"/>
+        </Style>
+    </Window.Resources>
+
+    <Border 
+        Background="White"
+        Padding="30"
+        CornerRadius="25"
+        MouseDown="Border_MouseDown">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left Menu -->
+            <Border 
+                CornerRadius="10"
+                Background="#155777">
+
+                <Border.Effect>
+                    <DropShadowEffect 
+                        ShadowDepth="1"
+                        BlurRadius="20"
+                        Opacity="0.4"/>
+                </Border.Effect>
+
+                <StackPanel>
+                    <!-- Menu Buttons -->
+                    <Button Style="{StaticResource menuButton}"
+                            Margin="07 30 07 00" 
+                            Click="HomeButton_Click">
+                        <Image Source="/Images/home.png" Width="50"/>
+                    </Button>
+
+                    <Button Style="{StaticResource menuButton}"
+                            Margin="7 40 7 0"
+                            Click="RansomwareButton_Click">
+                        <Image Source="/Images/ran.png" Width="50"/>
+                    </Button>
+
+                    <Button Style="{StaticResource menuButton}"
+                            Margin="07 40 07 00" 
+                            Click="Dos_Click">
+                        <Image Source="pack://application:,,,/Images/dos.png" Width="50"/>
+                    </Button>
+
+                    <Button Style="{StaticResource menuButton}"
+                            Click="Ids_Click"
+                            Margin="07 40 07 00">
+                        <Image Source="pack://application:,,,/Images/ids.png" Width="50"/>
+                    </Button>
+
+                    <Button Style="{StaticResource menuButton}"
+                            Margin="07 40 07 00"  
+                            Click="Waf_Click">
+                        <Image Source="pack://application:,,,/Images/waf.png" Width="50"/>
+
+                    </Button>
+
+                    <Button Style="{StaticResource menuButton}"
+                            Click="RateLimiter_Click"
+                            Margin="07 40 07 00">
+                        <Image Source="pack://application:,,,/Images/api.png" Width="50"/>
+                    </Button>
+
+                    <Button Style="{StaticResource menuButton}"
+                            Margin="07 40 07 00" 
+                            Click="SettingsButton_Click">
+                        <Image Source="pack://application:,,,/Images/set.png" Width="50"/>
+                    </Button>
+                </StackPanel>
+            </Border>
+            <!-- Content Area -->
+            <Grid Grid.Column="1">
+
+
+                <!-- Home Page -->
+                <Border 
+    x:Name="HomePage"
+    Grid.Column="1"
+    Margin="20 0 0 0"
+    CornerRadius="25"
+    Visibility="Visible">
+                    <Border.Background>
+                        <ImageBrush 
+            ImageSource="pack://application:,,,/Images/blank.jpeg"
+            Stretch="Fill">
+                            <ImageBrush.Transform>
+                                <TransformGroup>
+                                    <ScaleTransform x:Name="BackgroundScale" ScaleX="1" ScaleY="1"/>
+                                </TransformGroup>
+                            </ImageBrush.Transform>
+                        </ImageBrush>
+                    </Border.Background>
+
+                    <Border.Triggers>
+                        <EventTrigger RoutedEvent="Border.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="MainContent"
+                        Storyboard.TargetProperty="Opacity"
+                        From="0" To="1" Duration="0:0:1.5"/>
+                                    <DoubleAnimation
+                        Storyboard.TargetName="FactsPanel"
+                        Storyboard.TargetProperty="Opacity"
+                        From="0" To="1" Duration="0:0:2"
+                        BeginTime="0:0:0.5"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Border.Triggers>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Main Welcome Content -->
+                        <StackPanel 
+            x:Name="MainContent"
+            Grid.Row="0"
+            VerticalAlignment="Top"
+            Margin="50 40 0 0">
+
+                            <TextBlock 
+                Text="Welcome To"
+                Style="{StaticResource titleText}">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect
+                        ShadowDepth="3"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.5"
+                        BlurRadius="4"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+
+                            <TextBlock 
+                Text="Cyber Panacea"
+                Style="{StaticResource headerText}">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect
+                        ShadowDepth="3"
+                        Direction="330"
+                        Color="Black"
+                        Opacity="0.5"
+                        BlurRadius="4"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+
+                            <TextBlock 
+                Text="The panacea for all cyber attacks and issues"
+                Style="{StaticResource descriptionText}"
+                Margin="0 0 0 30"/>
+
+                            <!-- Protection Features -->
+                            <ItemsControl x:Name="ProtectionFeatures" 
+                         Margin="0 20 0 0">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border 
+                            Background="#4C000000"
+                            CornerRadius="10"
+                            Margin="0 0 10 10"
+                            Padding="15 10">
+                                            <TextBlock 
+                                Text="{Binding}"
+                                Foreground="White"
+                                FontSize="14"/>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+
+                        <!-- Scrollable Facts Panel -->
+                        <ScrollViewer 
+            Grid.Row="1"
+            Margin="50 20 50 40"
+            VerticalScrollBarVisibility="Auto">
+                            <StackPanel x:Name="FactsPanel">
+                                <!-- Ransomware Facts -->
+                                <Border
+                    Background="#4C000000"
+                    CornerRadius="15"
+                    Padding="20"
+                    Margin="0 0 0 20">
+                                    <StackPanel>
+                                        <TextBlock 
+                            Text="🔒 Ransomware Facts"
+                            FontSize="22"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Margin="0 0 0 15"/>
+
+                                        <ItemsControl x:Name="RansomwareFacts">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Margin="0 0 0 10">
+                                                        <TextBlock 
+                                            Text="{Binding}"
+                                            Foreground="White"
+                                            TextWrapping="Wrap"
+                                            FontSize="14"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+
+                                <!-- 7-Layer Protection -->
+                                <Border
+                    Background="#4C000000"
+                    CornerRadius="15"
+                    Padding="20">
+                                    <StackPanel>
+                                        <TextBlock 
+                            Text="🛡️ Our 7-Layer Protection"
+                            FontSize="22"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Margin="0 0 0 15"/>
+
+                                        <ItemsControl x:Name="ProtectionLayers">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid Margin="0 0 0 15">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <Border 
+                                            Grid.Column="0"
+                                            Background="#7F1E90FF"
+                                            Width="30"
+                                            Height="30"
+                                            CornerRadius="15"
+                                            Margin="0 0 10 0">
+                                                            <TextBlock 
+                                                Text="{Binding Number}"
+                                                Foreground="White"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                FontWeight="Bold"/>
+                                                        </Border>
+
+                                                        <TextBlock 
+                                            Grid.Column="1"
+                                            Text="{Binding Description}"
+                                            Foreground="White"
+                                            TextWrapping="Wrap"
+                                            VerticalAlignment="Center"
+                                            FontSize="14"/>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Grid>
+                </Border>
+
+                <!-- Ransomware Page -->
+                <Border 
+                    x:Name="RansomwarePage"
+                    Grid.Column="1"
+                    Margin="20 0 0 0"
+                    CornerRadius="25"
+                    Visibility="Collapsed">
+
+                    <Border.Background>
+                        <ImageBrush 
+                            ImageSource="pack://application:,,,/Images/blank.jpeg"
+                    
+                            Stretch="Fill"/>
+                    </Border.Background>
+
+                    <Grid>
+                        <StackPanel 
+                            VerticalAlignment="Center"
+                            Margin="50 0 0 285">
+                            <TextBlock 
+                                Text="Ransomware Protection"
+                                Style="{StaticResource headerText}"/>
+                            <TextBlock 
+                                Text="Your files deserve a fortress—turn on ransomware protection now for peace of mind."
+                                Style="{StaticResource descriptionText}"/>
+                        </StackPanel>
+
+                        <!-- Protection Controls -->
+                        <StackPanel 
+                            VerticalAlignment="Center"
+                            Margin="50 150 50 0">
+                            <Border 
+    Background="#22ffffff"
+    CornerRadius="10"
+    Padding="20"
+    Margin="0 0 0 20">
+                                <Grid>
+                                    <StackPanel>
+                                        <TextBlock 
+                x:Name="ProtectionStatusText"
+                FontSize="20"
+                FontWeight="Bold">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Text" Value="Protection Status"/>
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ElementName=ProtectionToggle, Path=IsChecked}" Value="True">
+
+                                                            <Setter Property="Text" Value="You Are Protected"/>
+
+                                                            <Setter Property="Foreground" Value="LightGreen"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+
+                                        <!-- Status Message with Two Colors -->
+                                        <TextBlock 
+                Margin="0,5,0,0"
+                FontSize="16"
+                Visibility="Collapsed">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ElementName=ProtectionToggle, Path=IsChecked}" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                <Run Text="You are" Foreground="White"/>
+                <Run Text=" Protected" Foreground="Yellow"/>
+                                        </TextBlock>
+                                    </StackPanel>
+
+                                    <ToggleButton 
+            x:Name="ProtectionToggle"
+            HorizontalAlignment="Right"
+            Checked="HandleProtectionToggle"
+            Unchecked="HandleProtectionToggle"
+            
+            Width="60"
+            Height="30">
+                                        <ToggleButton.Template>
+                                            <ControlTemplate TargetType="ToggleButton">
+                                                <Border 
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="15">
+                                                    <Grid>
+                                                        <Ellipse 
+                                x:Name="Dot"
+                                Width="26"
+                                Height="26"
+                                Fill="White"
+                                HorizontalAlignment="Left"
+                                Margin="2 0 0 0"/>
+                                                    </Grid>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsChecked" Value="True">
+                                                        <Setter TargetName="Dot" Property="HorizontalAlignment" Value="Right"/>
+                                                        <Setter TargetName="Dot" Property="Margin" Value="0 0 2 0"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </ToggleButton.Template>
+                                        <ToggleButton.Style>
+                                            <Style TargetType="ToggleButton">
+                                                <Setter Property="Background" Value="#666666"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsChecked" Value="True">
+                                                        <Setter Property="Background" Value="Green"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </ToggleButton.Style>
+                                    </ToggleButton>
+                                
+                                
+                                </Grid>
+                            </Border>
+
+                            <!-- 7 Layer Protection Button -->
+                            <Button 
+                                Height="50"
+                                Background="#155777"
+                                Foreground="White"
+                                Content="7 Layer Protection"
+                                FontSize="18"
+                                Margin="0 20 0 0"
+                                BorderThickness="0"
+                                Click="SevenLayerProtectionButton_Click">
+
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Border 
+                                                        Background="{TemplateBinding Background}"
+                                                        CornerRadius="10">
+                                                        <ContentPresenter 
+                                                            HorizontalAlignment="Center" 
+                                                            VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#1A6B94"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+
+                <!-- Dos Page-->
+                <Border 
+    x:Name="DosPage"
+    Grid.Column="1"
+    Margin="20 0 0 0"
+    CornerRadius="25"
+    Visibility="Collapsed">
+
+                    <Border.Background>
+                        <ImageBrush 
+                        ImageSource="pack://application:,,,/images/blank.jpeg" Stretch="Fill"/>
+                    </Border.Background>
+
+                    <Grid>
+                        <StackPanel 
+            VerticalAlignment="Center"
+            Margin="50 0 0 285">
+                            <TextBlock 
+                Text="DDoS Protection"
+                Style="{StaticResource headerText}"/>
+                            <TextBlock 
+                Text="Shield your infrastructure from distributed attacks with our advanced DDoS protection."
+                Style="{StaticResource descriptionText}"/>
+                        </StackPanel>
+
+                        <!-- Protection Controls -->
+                        <StackPanel 
+            VerticalAlignment="Center"
+            Margin="50 150 50 0">
+                            <Border 
+                Background="#22ffffff"
+                CornerRadius="10"
+                Padding="20"
+                Margin="0 0 0 20">
+                                <Grid>
+                                    <StackPanel>
+                                        <TextBlock 
+                            x:Name="DosStatusText"
+                            FontSize="20"
+                            FontWeight="Bold">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Text" Value="Protection Status"/>
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ElementName=DosToggle, Path=IsChecked}" Value="True">
+                                                            <Setter Property="Text" Value="You Are Protected"/>
+                                                            <Setter Property="Foreground" Value="LightGreen"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+
+                                        <!-- Status Message with Two Colors -->
+                                        <TextBlock 
+                            x:Name="DosStatusMessage"
+                            Margin="0,5,0,0"
+                            FontSize="16"
+                            Visibility="Collapsed">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ElementName=DosToggle, Path=IsChecked}" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                            <Run Text="You are" Foreground="White"/>
+                            <Run Text=" Protected" Foreground="Yellow"/>
+                                        </TextBlock>
+                                    </StackPanel>
+
+                                    <ToggleButton 
+                        x:Name="DosToggle"
+                        HorizontalAlignment="Right"
+                        Checked="HandleProtectionToggle"
+                        Unchecked="HandleProtectionToggle"
+                        Width="60"
+                        Height="30">
+                                        <ToggleButton.Template>
+                                            <ControlTemplate TargetType="ToggleButton">
+                                                <Border 
+                                    Background="{TemplateBinding Background}"
+                                    CornerRadius="15">
+                                                    <Grid>
+                                                        <Ellipse 
+                                            x:Name="Dot"
+                                            Width="26"
+                                            Height="26"
+                                            Fill="White"
+                                            HorizontalAlignment="Left"
+                                            Margin="2 0 0 0"/>
+                                                    </Grid>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsChecked" Value="True">
+                                                        <Setter TargetName="Dot" Property="HorizontalAlignment" Value="Right"/>
+                                                        <Setter TargetName="Dot" Property="Margin" Value="0 0 2 0"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </ToggleButton.Template>
+                                        <ToggleButton.Style>
+                                            <Style TargetType="ToggleButton">
+                                                <Setter Property="Background" Value="#666666"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsChecked" Value="True">
+                                                        <Setter Property="Background" Value="Green"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </ToggleButton.Style>
+                                    </ToggleButton>
+                                </Grid>
+                            </Border>
+
+
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <!-- IDS Page -->
+                <Border 
+    x:Name="IdsPage"
+    Grid.Column="1"
+    Margin="20 0 0 0"
+    CornerRadius="25"
+    Visibility="Collapsed">
+
+                    <Border.Background>
+                        <ImageBrush 
+            ImageSource="pack://application:,,,/images/blank.jpeg"
+            Stretch="Fill"/>
+                    </Border.Background>
+
+                    <Grid>
+                        <StackPanel 
+            VerticalAlignment="Center"
+            Margin="50 0 0 285">
+                            <TextBlock 
+                Text="IDS/IPS Protection"
+                Style="{StaticResource headerText}"/>
+                            <TextBlock 
+                Text="Monitor and detect potential security breaches with our advanced intrusion detection system."
+                Style="{StaticResource descriptionText}"/>
+                        </StackPanel>
+
+                        <!-- Protection Controls -->
+                        <StackPanel 
+            VerticalAlignment="Center"
+            Margin="50 150 50 0">
+                            <Border 
+                Background="#22ffffff"
+                CornerRadius="10"
+                Padding="20"
+                Margin="0 0 0 20">
+                                <Grid>
+                                    <StackPanel>
+                                        <TextBlock 
+                            x:Name="IdsStatusText"
+                            FontSize="20"
+                            FontWeight="Bold">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Text" Value="Protection Status"/>
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ElementName=IdsToggle, Path=IsChecked}" Value="True">
+                                                            <Setter Property="Text" Value="You Are Protected"/>
+                                                            <Setter Property="Foreground" Value="LightGreen"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+
+                                        <!-- Status Message with Two Colors -->
+                                        <TextBlock 
+                            x:Name="IdsStatusMessage"
+                            Margin="0,5,0,0"
+                            FontSize="16"
+                            Visibility="Collapsed">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ElementName=IdsToggle, Path=IsChecked}" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                            <Run Text="You are" Foreground="White"/>
+                            <Run Text=" Protected" Foreground="Yellow"/>
+                                        </TextBlock>
+                                    </StackPanel>
+
+                                    <ToggleButton 
+                        x:Name="IdsToggle"
+                        HorizontalAlignment="Right"
+                        Checked="HandleProtectionToggle"
+                        Unchecked="HandleProtectionToggle"
+                        Width="60"
+                        Height="30">
+                                        <ToggleButton.Template>
+                                            <ControlTemplate TargetType="ToggleButton">
+                                                <Border 
+                                    Background="{TemplateBinding Background}"
+                                    CornerRadius="15">
+                                                    <Grid>
+                                                        <Ellipse 
+                                            x:Name="Dot"
+                                            Width="26"
+                                            Height="26"
+                                            Fill="White"
+                                            HorizontalAlignment="Left"
+                                            Margin="2 0 0 0"/>
+                                                    </Grid>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsChecked" Value="True">
+                                                        <Setter TargetName="Dot" Property="HorizontalAlignment" Value="Right"/>
+                                                        <Setter TargetName="Dot" Property="Margin" Value="0 0 2 0"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </ToggleButton.Template>
+                                        <ToggleButton.Style>
+                                            <Style TargetType="ToggleButton">
+                                                <Setter Property="Background" Value="#666666"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsChecked" Value="True">
+                                                        <Setter Property="Background" Value="Green"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </ToggleButton.Style>
+                                    </ToggleButton>
+                                </Grid>
+                            </Border>
+
+
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+
+                <!-- WAF Page -->
+                <Border 
+    x:Name="WafPage"
+    Grid.Column="1"
+    Margin="20 0 0 0"
+    CornerRadius="25"
+    Visibility="Collapsed">
+
+                    <Border.Background>
+                        <ImageBrush 
+            ImageSource="pack://application:,,,/images/blank.jpeg"
+            Stretch="Fill"/>
+                    </Border.Background>
+
+                    <Grid>
+                        <StackPanel 
+            VerticalAlignment="Center"
+            Margin="50 0 0 285">
+                            <TextBlock 
+                Text="Web Application Firewall"
+                Style="{StaticResource headerText}"/>
+                            <TextBlock 
+                Text="Protect your web applications from malicious attacks with our advanced WAF protection."
+                Style="{StaticResource descriptionText}"/>
+                        </StackPanel>
+
+                        <!-- Protection Controls -->
+                        <StackPanel 
+            VerticalAlignment="Center"
+            Margin="50 150 50 0">
+                            <Border 
+                Background="#22ffffff"
+                CornerRadius="10"
+                Padding="20"
+                Margin="0 0 0 20">
+                                <Grid>
+                                    <StackPanel>
+                                        <TextBlock 
+                            x:Name="WafStatusText"
+                            FontSize="20"
+                            FontWeight="Bold">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Text" Value="Protection Status"/>
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ElementName=WafToggle, Path=IsChecked}" Value="True">
+                                                            <Setter Property="Text" Value="You Are Protected"/>
+                                                            <Setter Property="Foreground" Value="LightGreen"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+
+                                        <!-- Status Message with Two Colors -->
+                                        <TextBlock 
+                            x:Name="WafStatusMessage"
+                            Margin="0,5,0,0"
+                            FontSize="16"
+                            Visibility="Collapsed">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ElementName=WafToggle, Path=IsChecked}" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                            <Run Text="You are" Foreground="White"/>
+                            <Run Text=" Protected" Foreground="Yellow"/>
+                                        </TextBlock>
+                                    </StackPanel>
+
+                                    <ToggleButton 
+                        x:Name="WafToggle"
+                        HorizontalAlignment="Right"
+                                        
+                        Checked="HandleProtectionToggle"
+                        Unchecked="HandleProtectionToggle"
+                        Width="60"
+                        Height="30">
+                                        <ToggleButton.Template>
+                                            <ControlTemplate TargetType="ToggleButton">
+                                                <Border 
+                                    Background="{TemplateBinding Background}"
+                                    CornerRadius="15">
+                                                    <Grid>
+                                                        <Ellipse 
+                                            x:Name="Dot"
+                                            Width="26"
+                                            Height="26"
+                                            Fill="White"
+                                            HorizontalAlignment="Left"
+                                            Margin="2 0 0 0"/>
+                                                    </Grid>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsChecked" Value="True">
+                                                        <Setter TargetName="Dot" Property="HorizontalAlignment" Value="Right"/>
+                                                        <Setter TargetName="Dot" Property="Margin" Value="0 0 2 0"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </ToggleButton.Template>
+                                        <ToggleButton.Style>
+                                            <Style TargetType="ToggleButton">
+                                                <Setter Property="Background" Value="#666666"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsChecked" Value="True">
+                                                        <Setter Property="Background" Value="Green"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </ToggleButton.Style>
+                                    </ToggleButton>
+                                </Grid>
+                            </Border>
+
+
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                
+                <Border 
+    x:Name="RateLimiterPage"
+    Grid.Column="1"
+    Margin="20 0 0 0"
+    CornerRadius="25"
+    Visibility="Collapsed">
+
+                    <Border.Background>
+                        <ImageBrush 
+            ImageSource="pack://application:,,,/Images/blank.jpeg"
+            Stretch="Fill"/>
+                    </Border.Background>
+
+                    <Grid>
+                        <StackPanel 
+            VerticalAlignment="Center"
+            Margin="50 0 0 285">
+                            <TextBlock 
+                Text="API Rate Limiter"
+                Style="{StaticResource headerText}"/>
+                            <TextBlock 
+                Text="Protect your APIs from abuse with intelligent rate limiting controls"
+                Style="{StaticResource descriptionText}"/>
+                        </StackPanel>
+
+                        <!-- Protection Controls -->
+                        <StackPanel 
+            VerticalAlignment="Center"
+            Margin="50 150 50 0">
+                            <Border 
+                Background="#22ffffff"
+                CornerRadius="10"
+                Padding="20"
+                Margin="0 0 0 20">
+                                <Grid>
+                                    <StackPanel>
+                                        <TextBlock 
+                            x:Name="RateLimiterStatusText"
+                            FontSize="20"
+                            FontWeight="Bold">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Text" Value="Protection Status"/>
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ElementName=RateLimiterToggle, Path=IsChecked}" Value="True">
+                                                            <Setter Property="Text" Value="You Are Protected"/>
+                                                            <Setter Property="Foreground" Value="LightGreen"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+
+                                        <TextBlock 
+                            x:Name="RateLimiterStatusMessage"
+                            Margin="0,5,0,0"
+                            FontSize="16"
+                            Visibility="Collapsed">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ElementName=RateLimiterToggle, Path=IsChecked}" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                            <Run Text="You are" Foreground="White"/>
+                            <Run Text=" Protected" Foreground="Yellow"/>
+                                        </TextBlock>
+                                    </StackPanel>
+
+                                    <ToggleButton 
+                        x:Name="RateLimiterToggle"
+                        HorizontalAlignment="Right"
+                        Checked="HandleProtectionToggle"
+                        Unchecked="HandleProtectionToggle"
+                        Width="60"
+                        Height="30">
+                                        <ToggleButton.Template>
+                                            <ControlTemplate TargetType="ToggleButton">
+                                                <Border 
+                                    Background="{TemplateBinding Background}"
+                                    CornerRadius="15">
+                                                    <Grid>
+                                                        <Ellipse 
+                                            x:Name="Dot"
+                                            Width="26"
+                                            Height="26"
+                                            Fill="White"
+                                            HorizontalAlignment="Left"
+                                            Margin="2 0 0 0"/>
+                                                    </Grid>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsChecked" Value="True">
+                                                        <Setter TargetName="Dot" Property="HorizontalAlignment" Value="Right"/>
+                                                        <Setter TargetName="Dot" Property="Margin" Value="0 0 2 0"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </ToggleButton.Template>
+                                        <ToggleButton.Style>
+                                            <Style TargetType="ToggleButton">
+                                                <Setter Property="Background" Value="#666666"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsChecked" Value="True">
+                                                        <Setter Property="Background" Value="Green"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </ToggleButton.Style>
+                                    </ToggleButton>
+                                </Grid>
+                            </Border>
+
+
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+
+                <Border 
+                x:Name="SettingPage"
+                Grid.Column="1"
+                Margin="20 0 0 0"
+                CornerRadius="25"
+                Visibility="Collapsed">
+
+                    <Border.Background>
+                        <ImageBrush 
+                        ImageSource="pack://application:,,,/Images/blank.jpeg"
+                        Stretch="Fill"/>
+                    </Border.Background>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel 
+                        VerticalAlignment="Center"
+                        Margin="50 0 0 0">
+                            <TextBlock 
+                            Text="Security Settings"
+                            Style="{StaticResource headerText}"/>
+                            <TextBlock 
+                            Text="Configure your security preferences and notifications"
+                            Style="{StaticResource descriptionText}"/>
+                        </StackPanel>
+
+                        <Grid Grid.Row="1" Margin="50,20">
+                            <Grid.Resources>
+                                <Style x:Key="SettingsTabControl" TargetType="TabControl">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="BorderBrush" Value="Transparent"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                </Style>
+
+                                <Style x:Key="SettingsTabItem" TargetType="TabItem">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="FontSize" Value="20"/>
+                                    <Setter Property="Margin" Value="5,0"/>
+                                    <Setter Property="Padding" Value="15,10"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                </Style>
+
+                                <Style x:Key="SettingsTextBox" TargetType="TextBox">
+                                    <Setter Property="Background" Value="#22ffffff"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="BorderBrush" Value="Transparent"/>
+                                    <Setter Property="Padding" Value="10"/>
+                                    <Setter Property="Margin" Value="5"/>
+                                </Style>
+
+                                <Style x:Key="SettingsButton" TargetType="Button">
+                                    <Setter Property="Background" Value="#155777"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="Padding" Value="15,10"/>
+                                    <Setter Property="Margin" Value="5"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                </Style>
+                            </Grid.Resources>
+
+                            <TabControl Style="{StaticResource SettingsTabControl}">
+                                <!-- Alert Settings Tab -->
+                                <TabItem Header="Alert Settings" Style="{StaticResource SettingsTabItem}">
+                                    <StackPanel Margin="20">
+                                        <TextBlock Text="Alert Notification Settings" 
+                                             Foreground="White"
+                                             FontSize="20" 
+                                             Margin="0,0,0,20"/>
+
+                                        <CheckBox x:Name="IdsAlert" 
+          Content="IDS (Intrusion Detection System) Alerts" 
+          Foreground="White" 
+          Margin="0,10"
+          Checked="Alert_CheckedChanged"
+          Unchecked="Alert_CheckedChanged"/>
+
+                                        <CheckBox x:Name="AntiDosAlert" 
+          Content="Anti-DOS Protection Alerts" 
+          Foreground="White" 
+          Margin="0,10"
+          Checked="Alert_CheckedChanged"
+          Unchecked="Alert_CheckedChanged"/>
+
+                                        <CheckBox x:Name="RansomwareAlert" 
+          Content="Ransomware Protection Alerts" 
+          Foreground="White" 
+          Margin="0,10"
+          Checked="Alert_CheckedChanged"
+          Unchecked="Alert_CheckedChanged"/>
+                                    </StackPanel>
+                                </TabItem>
+
+                                <!-- Anti-DOS Settings Tab -->
+                                <TabItem Header="Anti-DOS Settings" Style="{StaticResource SettingsTabItem}">
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                        <StackPanel Margin="20">
+                                            <!-- Ports Section -->
+                                            <TextBlock Text="Monitored Ports" 
+                                                 Foreground="White"
+                                                 FontSize="20" 
+                                                 Margin="0,0,0,20"/>
+
+                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                                                <TextBox x:Name="PortInput" 
+                                                    Width="100" 
+                                                    Style="{StaticResource SettingsTextBox}"
+                                                    VerticalAlignment="Center"/>
+                                                <Button Content="Add Port" 
+                                                    Click="AddPort_Click"
+                                                    Style="{StaticResource SettingsButton}"/>
+                                            </StackPanel>
+
+                                            <ListBox x:Name="PortList" 
+                                                Height="150" 
+                                                Background="#22ffffff"
+                                                Foreground="White"
+                                                BorderThickness="0"/>
+
+                                            <Button Content="Remove Selected Port" 
+                                                Click="RemovePort_Click"
+                                                Style="{StaticResource SettingsButton}"
+                                                Margin="0,15,0,30"/>
+
+                                            <!-- IP Whitelist Section -->
+                                            <TextBlock Text="IP Whitelist" 
+                                                 Foreground="White"
+                                                 FontSize="20" 
+                                                 Margin="0,0,0,20"/>
+
+                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                                                <TextBox x:Name="WhitelistIPInput" 
+                                                    Width="200" 
+                                                    Style="{StaticResource SettingsTextBox}"
+                                                    VerticalAlignment="Center"/>
+                                                <Button Content="Add IP to Whitelist" 
+                                                    Click="AddWhitelistIP_Click"
+                                                    Style="{StaticResource SettingsButton}"/>
+                                            </StackPanel>
+
+                                            <ListBox x:Name="WhitelistIPList" 
+                                                Height="150" 
+                                                Background="#22ffffff"
+                                                Foreground="White"
+                                                BorderThickness="0"/>
+
+                                            <Button Content="Remove Selected Whitelisted IP" 
+                                                Click="RemoveWhitelistIP_Click"
+                                                Style="{StaticResource SettingsButton}"
+                                                Margin="0,15,0,30"/>
+
+                                            <!-- IP Blacklist Section -->
+                                            <TextBlock Text="IP Blacklist" 
+                                                 Foreground="White"
+                                                 FontSize="20" 
+                                                 Margin="0,0,0,20"/>
+
+                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                                                <TextBox x:Name="BlacklistIPInput" 
+                                                    Width="200" 
+                                                    Style="{StaticResource SettingsTextBox}"
+                                                    VerticalAlignment="Center"/>
+                                                <Button Content="Add IP to Blacklist" 
+                                                    Click="AddBlacklistIP_Click"
+                                                    Style="{StaticResource SettingsButton}"/>
+                                            </StackPanel>
+
+                                            <ListBox x:Name="BlacklistIPList" 
+                                                Height="150" 
+                                                Background="#22ffffff"
+                                                Foreground="White"
+                                                BorderThickness="0"/>
+
+                                            <Button Content="Remove Selected Blacklisted IP" 
+                                                Click="RemoveBlacklistIP_Click"
+                                                Style="{StaticResource SettingsButton}"
+                                                Margin="0,15,0,0"/>
+                                        </StackPanel>
+                                    </ScrollViewer>
+                                </TabItem>
+
+
+                                <TabItem Header="Email Settings" Style="{DynamicResource SettingsTabItem}">
+                                    <StackPanel Margin="20">
+                                        <!-- Title -->
+                                        <TextBlock Text="Email Notification Settings" 
+                  Foreground="White"
+                  FontSize="20" 
+                  FontWeight="SemiBold"
+                  Margin="0,0,0,20"/>
+
+                                        <!-- Primary Email -->
+                                        <TextBlock Text="Primary Notification Email:" 
+                  Foreground="White" 
+                  Margin="0,10"/>
+                                        <TextBox x:Name="PrimaryEmail" 
+                 Style="{DynamicResource SettingsTextBox}"
+                 MaxLength="100"
+                 ToolTip="Enter the primary email address for notifications"/>
+
+                                        <!-- Additional Recipients -->
+                                        <TextBlock Text="Additional Recipients:" 
+                  Foreground="White" 
+                  Margin="0,20,0,10"/>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBox x:Name="RecipientInput" 
+                     Width="300" 
+                     Style="{DynamicResource SettingsTextBox}"
+                     MaxLength="100"
+                     ToolTip="Enter additional email addresses"/>
+                                            <Button Content="Add Recipient" 
+                    Click="AddRecipient_Click"
+                    Style="{DynamicResource SettingsButton}"
+                    Margin="10,0,0,0"/>
+                                        </StackPanel>
+
+                                        <!-- Recipient List -->
+                                        <ListBox x:Name="RecipientList" 
+                 Height="150" 
+                 Background="#22ffffff"
+                 Foreground="White"
+                 BorderThickness="0"
+                 Margin="0,15,0,0"
+                 SelectionMode="Single"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 ItemContainerStyle="{DynamicResource SettingsListBoxItem}">
+                                            <ListBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding}" 
+                             TextTrimming="CharacterEllipsis"/>
+                                                </DataTemplate>
+                                            </ListBox.ItemTemplate>
+                                        </ListBox>
+
+                                        <!-- Remove and Save Buttons -->
+                                        <Button Content="Remove Selected Recipient" 
+                Click="RemoveRecipient_Click"
+                Style="{DynamicResource SettingsButton}"
+                Margin="0,15,0,0"/>
+                                        <Button Content="Save Configuration" 
+                Click="SaveConfig_Click"
+                Style="{DynamicResource SettingsButton}"
+                Margin="0,30,0,0"/>
+                                    </StackPanel>
+                                </TabItem>
+
+
+
+
+
+                                <TabItem Header="Ransomware Settings" Style="{DynamicResource ModernTabItem}">
+                                    <Grid Margin="24">
+                                        <TabControl Style="{DynamicResource ModernTabControl}">
+                                            <!-- Quarantined Files Tab -->
+                                            <TabItem Header="Quarantined Files">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <!-- Search and Filter Section -->
+                                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+                                                        <!-- Modern Search Box -->
+                                                        <Border Background="#F5F5F5" CornerRadius="6" Width="240" Margin="0,0,16,0">
+                                                            <TextBox Width="220" Margin="8">
+                                                                <TextBox.Style>
+                                                                    <Style TargetType="TextBox">
+                                                                        <Setter Property="Background" Value="Transparent"/>
+                                                                        <Setter Property="Foreground" Value="#202020"/>
+                                                                        <Setter Property="BorderThickness" Value="0"/>
+                                                                        <Setter Property="Padding" Value="8,6"/>
+                                                                        <Style.Triggers>
+                                                                            <Trigger Property="Text" Value="">
+                                                                                <Setter Property="Background">
+                                                                                    <Setter.Value>
+                                                                                        <VisualBrush Stretch="None" TileMode="None">
+                                                                                            <VisualBrush.Visual>
+                                                                                                <TextBlock Text="Search files..." Foreground="#757575"/>
+                                                                                            </VisualBrush.Visual>
+                                                                                        </VisualBrush>
+                                                                                    </Setter.Value>
+                                                                                </Setter>
+                                                                            </Trigger>
+                                                                        </Style.Triggers>
+                                                                    </Style>
+                                                                </TextBox.Style>
+                                                            </TextBox>
+                                                        </Border>
+
+                                                        <!-- Modern ComboBox -->
+                                                        <ComboBox Width="180" Margin="0,0,16,0" Style="{DynamicResource ModernComboBox}">
+                                                            <ComboBox.Resources>
+                                                                <Style TargetType="ComboBox">
+                                                                    <Setter Property="Background" Value="#F5F5F5"/>
+                                                                    <Setter Property="Foreground" Value="#202020"/>
+                                                                    <Setter Property="BorderThickness" Value="0"/>
+                                                                    <Setter Property="Padding" Value="8,6"/>
+                                                                    <Setter Property="Template">
+                                                                        <Setter.Value>
+                                                                            <ControlTemplate TargetType="ComboBox">
+                                                                                <Border Background="{TemplateBinding Background}"
+                                                        CornerRadius="6">
+                                                                                    <Grid>
+                                                                                        <ContentPresenter/>
+                                                                                    </Grid>
+                                                                                </Border>
+                                                                            </ControlTemplate>
+                                                                        </Setter.Value>
+                                                                    </Setter>
+                                                                </Style>
+                                                            </ComboBox.Resources>
+                                                            <ComboBoxItem Content="All Types"/>
+                                                            <ComboBoxItem Content="Malware"/>
+                                                            <ComboBoxItem Content="Virus"/>
+                                                            <ComboBoxItem Content="Trojan"/>
+                                                        </ComboBox>
+
+                                                        <!-- Modern Button -->
+                                                        <Button Content="Refresh" Width="100" Style="{DynamicResource ModernButton}">
+                                                            <Button.Resources>
+                                                                <Style TargetType="Button">
+                                                                    <Setter Property="Background" Value="#007AFF"/>
+                                                                    <Setter Property="Foreground" Value="White"/>
+                                                                    <Setter Property="BorderThickness" Value="0"/>
+                                                                    <Setter Property="Padding" Value="16,8"/>
+                                                                    <Setter Property="Template">
+                                                                        <Setter.Value>
+                                                                            <ControlTemplate TargetType="Button">
+                                                                                <Border Background="{TemplateBinding Background}"
+                                                        CornerRadius="6">
+                                                                                    <ContentPresenter HorizontalAlignment="Center" 
+                                                                    VerticalAlignment="Center"/>
+                                                                                </Border>
+                                                                            </ControlTemplate>
+                                                                        </Setter.Value>
+                                                                    </Setter>
+                                                                </Style>
+                                                            </Button.Resources>
+                                                        </Button>
+                                                    </StackPanel>
+
+                                                    <!-- Modern DataGrid -->
+                                                    <DataGrid Grid.Row="1" 
+                             Name="QuarantineGrid"
+                             AutoGenerateColumns="False"
+                             IsReadOnly="True"
+                             Background="White"
+                             Foreground="#202020"
+                             BorderThickness="1"
+                             BorderBrush="#E0E0E0"
+                             RowBackground="White"
+                             AlternatingRowBackground="#F8F9FA"
+                             GridLinesVisibility="None"
+                             RowHeaderWidth="0"
+                             Style="{DynamicResource ModernDataGrid}">
+                                                        <DataGrid.Resources>
+                                                            <Style TargetType="DataGridColumnHeader">
+                                                                <Setter Property="Background" Value="White"/>
+                                                                <Setter Property="Foreground" Value="#202020"/>
+                                                                <Setter Property="Padding" Value="12,8"/>
+                                                                <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                                                                <Setter Property="BorderBrush" Value="#E0E0E0"/>
+                                                            </Style>
+                                                            <Style TargetType="DataGridCell">
+                                                                <Setter Property="Padding" Value="12,8"/>
+                                                                <Setter Property="BorderThickness" Value="0"/>
+                                                            </Style>
+                                                        </DataGrid.Resources>
+                                                        <DataGrid.Columns>
+                                                            <DataGridTextColumn Header="File Name" Binding="{Binding FileName}" Width="220"/>
+                                                            <DataGridTextColumn Header="Original Location" Binding="{Binding OriginalPath}" Width="*"/>
+                                                            <DataGridTextColumn Header="Threat Type" Binding="{Binding ThreatType}" Width="140"/>
+                                                            <DataGridTextColumn Header="Date" Binding="{Binding QuarantineDate}" Width="140"/>
+                                                            <DataGridTextColumn Header="Size" Binding="{Binding FileSize}" Width="100"/>
+                                                            <DataGridTemplateColumn Header="Actions" Width="180">
+                                                                <DataGridTemplateColumn.CellTemplate>
+                                                                    <DataTemplate>
+                                                                        <StackPanel Orientation="Horizontal" Margin="4">
+                                                                            <Button Content="Restore" 
+                                                    Width="80" 
+                                                    Margin="0,0,8,0"
+                                                    Style="{StaticResource ModernActionButton}"
+                                                    Click="RestoreButton_Click"/>
+                                                                            <Button Content="Delete" 
+                                                    Width="80"
+                                                    Style="{StaticResource ModernDeleteButton}"
+                                                    Click="DeleteButton_Click"/>
+                                                                        </StackPanel>
+                                                                    </DataTemplate>
+                                                                </DataGridTemplateColumn.CellTemplate>
+                                                            </DataGridTemplateColumn>
+                                                        </DataGrid.Columns>
+                                                    </DataGrid>
+                                                </Grid>
+                                            </TabItem>
+
+                                            <!-- Removed Files Tab (Similar modern styling applied) -->
+                                            <TabItem Header="Removed Files">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <!-- Search and Filter Section -->
+                                                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+                                                        <!-- Modern Search Box -->
+                                                        <Border Background="#F5F5F5" CornerRadius="6" Width="240" Margin="0,0,16,0">
+                                                            <TextBox Width="220" Margin="8">
+                                                                <TextBox.Style>
+                                                                    <Style TargetType="TextBox">
+                                                                        <Setter Property="Background" Value="Transparent"/>
+                                                                        <Setter Property="Foreground" Value="#202020"/>
+                                                                        <Setter Property="BorderThickness" Value="0"/>
+                                                                        <Setter Property="Padding" Value="8,6"/>
+                                                                        <Style.Triggers>
+                                                                            <Trigger Property="Text" Value="">
+                                                                                <Setter Property="Background">
+                                                                                    <Setter.Value>
+                                                                                        <VisualBrush Stretch="None" TileMode="None">
+                                                                                            <VisualBrush.Visual>
+                                                                                                <TextBlock Text="Search files..." Foreground="#757575"/>
+                                                                                            </VisualBrush.Visual>
+                                                                                        </VisualBrush>
+                                                                                    </Setter.Value>
+                                                                                </Setter>
+                                                                            </Trigger>
+                                                                        </Style.Triggers>
+                                                                    </Style>
+                                                                </TextBox.Style>
+                                                            </TextBox>
+                                                        </Border>
+
+                                                        <ComboBox Width="180" Margin="0,0,16,0" Style="{DynamicResource ModernComboBox}">
+                                                            <ComboBoxItem Content="All Types"/>
+                                                            <ComboBoxItem Content="Malware"/>
+                                                            <ComboBoxItem Content="Virus"/>
+                                                            <ComboBoxItem Content="Trojan"/>
+                                                        </ComboBox>
+
+                                                        <Button Content="Export" 
+                                Width="100" 
+                                Style="{DynamicResource ModernButton}"
+                                Click="ExportButton_Click"/>
+                                                    </StackPanel>
+
+                                                    <!-- Modern DataGrid -->
+                                                    <DataGrid Grid.Row="1" 
+                             Name="RemovedGrid"
+                             AutoGenerateColumns="False"
+                             IsReadOnly="True"
+                             Background="White"
+                             Foreground="#202020"
+                             BorderThickness="1"
+                             BorderBrush="#E0E0E0"
+                             RowBackground="White"
+                             AlternatingRowBackground="#F8F9FA"
+                             GridLinesVisibility="None"
+                             RowHeaderWidth="0"
+                             Style="{DynamicResource ModernDataGrid}">
+                                                        <DataGrid.Columns>
+                                                            <DataGridTextColumn Header="File Name" Binding="{Binding FileName}" Width="220"/>
+                                                            <DataGridTextColumn Header="Original Location" Binding="{Binding OriginalPath}" Width="*"/>
+                                                            <DataGridTextColumn Header="Threat Type" Binding="{Binding ThreatType}" Width="140"/>
+                                                            <DataGridTextColumn Header="Removal Date" Binding="{Binding RemovalDate}" Width="140"/>
+                                                            <DataGridTextColumn Header="Size" Binding="{Binding FileSize}" Width="100"/>
+                                                            <DataGridTextColumn Header="Method" Binding="{Binding RemovalMethod}" Width="120"/>
+                                                        </DataGrid.Columns>
+                                                    </DataGrid>
+                                                </Grid>
+                                            </TabItem>
+                                        </TabControl>
+                                    </Grid>
+                                </TabItem>
+
+
+
+
+                            </TabControl>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+
+            </Grid>
+        </Grid>
+    </Border>
+
+    
+
+</Window>
