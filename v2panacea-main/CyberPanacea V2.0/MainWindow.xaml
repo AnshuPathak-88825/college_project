@@ -274,7 +274,7 @@
                             </TextBlock>
 
                             <TextBlock 
-                Text="Cyber Panacea"
+                Text="Packet Protector"
                 Style="{StaticResource headerText}">
                                 <TextBlock.Effect>
                                     <DropShadowEffect
@@ -287,7 +287,7 @@
                             </TextBlock>
 
                             <TextBlock 
-                Text="The panacea for all cyber attacks and issues"
+                Text="This for cyber attacks and issues"
                 Style="{StaticResource descriptionText}"
                 Margin="0 0 0 30"/>
 
