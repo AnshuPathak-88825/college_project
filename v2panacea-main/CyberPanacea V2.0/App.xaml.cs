@@ -21,10 +21,13 @@ namespace CyberPanacea_V2._0
                 RunAsAdmin();
                 return; // Don't continue with the splash screen if restarting as admin
             }
+             MainWindow mainWindow = new MainWindow();
+
+            // Show the MainWindow
+            mainWindow.Show();
 
             // If the app is running as admin, show the splash screen
-            loader splashScreen = new loader();
-            splashScreen.Show();
+           
         }
 
         // Method to check if the program is running as Administrator

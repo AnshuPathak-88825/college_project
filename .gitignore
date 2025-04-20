@@ -1,0 +1,58 @@
+## Build results
+bin/
+obj/
+[Bb]uild/
+[Bb]uilds/
+
+## Rider / VS Code
+.idea/
+.vscode/
+
+## Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.assets.json
+PackageReference/
+*.deps.json
+
+## Logs & DB
+*.log
+*.sqlite
+*.db
+
+## OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## Backup & temp
+*.bak
+*.tmp
+*.temp
+*.swp
+*.~*
+
+## Others
+*.exe
+*.dll
+*.pdb
+
+# JetBrains Rider
+.idea/
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# Local config
+*.local.json
