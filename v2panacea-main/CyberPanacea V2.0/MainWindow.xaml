@@ -151,7 +151,7 @@
             <!-- Left Menu -->
             <Border 
                 CornerRadius="10"
-                Background="#155777">
+                Background="Black">
 
                 <Border.Effect>
                     <DropShadowEffect 
@@ -323,34 +323,6 @@
             VerticalScrollBarVisibility="Auto">
                             <StackPanel x:Name="FactsPanel">
                                 <!-- Ransomware Facts -->
-                                <Border
-                    Background="#4C000000"
-                    CornerRadius="15"
-                    Padding="20"
-                    Margin="0 0 0 20">
-                                    <StackPanel>
-                                        <TextBlock 
-                            Text="🔒 Ransomware Facts"
-                            FontSize="22"
-                            FontWeight="Bold"
-                            Foreground="White"
-                            Margin="0 0 0 15"/>
-
-                                        <ItemsControl x:Name="RansomwareFacts">
-                                            <ItemsControl.ItemTemplate>
-                                                <DataTemplate>
-                                                    <StackPanel Margin="0 0 0 10">
-                                                        <TextBlock 
-                                            Text="{Binding}"
-                                            Foreground="White"
-                                            TextWrapping="Wrap"
-                                            FontSize="14"/>
-                                                    </StackPanel>
-                                                </DataTemplate>
-                                            </ItemsControl.ItemTemplate>
-                                        </ItemsControl>
-                                    </StackPanel>
-                                </Border>
 
                                 <!-- 7-Layer Protection -->
                                 <Border
