@@ -180,11 +180,7 @@
                         <Image Source="pack://application:,,,/Images/dos.png" Width="50"/>
                     </Button>
 
-                    <Button Style="{StaticResource menuButton}"
-                            Click="Ids_Click"
-                            Margin="07 40 07 00">
-                        <Image Source="pack://application:,,,/Images/ids.png" Width="50"/>
-                    </Button>
+                    
 
                     <Button Style="{StaticResource menuButton}"
                             Margin="07 40 07 00"  
@@ -201,7 +197,7 @@
 
                     <Button Style="{StaticResource menuButton}"
                             Margin="07 40 07 00" 
-                            Click="SettingsButton_Click">
+                            Click="setting">
                         <Image Source="pack://application:,,,/Images/set.png" Width="50"/>
                     </Button>
                 </StackPanel>
@@ -330,12 +326,6 @@
                     CornerRadius="15"
                     Padding="20">
                                     <StackPanel>
-                                        <TextBlock 
-                            Text="🛡️ Our 7-Layer Protection"
-                            FontSize="22"
-                            FontWeight="Bold"
-                            Foreground="White"
-                            Margin="0 0 0 15"/>
 
                                         <ItemsControl x:Name="ProtectionLayers">
                                             <ItemsControl.ItemTemplate>
@@ -504,39 +494,6 @@
                             </Border>
 
                             <!-- 7 Layer Protection Button -->
-                            <Button 
-                                Height="50"
-                                Background="#155777"
-                                Foreground="White"
-                                Content="7 Layer Protection"
-                                FontSize="18"
-                                Margin="0 20 0 0"
-                                BorderThickness="0"
-                                Click="SevenLayerProtectionButton_Click">
-
-                                <Button.Style>
-                                    <Style TargetType="Button">
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="Button">
-                                                    <Border 
-                                                        Background="{TemplateBinding Background}"
-                                                        CornerRadius="10">
-                                                        <ContentPresenter 
-                                                            HorizontalAlignment="Center" 
-                                                            VerticalAlignment="Center"/>
-                                                    </Border>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#1A6B94"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Button.Style>
-                            </Button>
                         </StackPanel>
                     </Grid>
                 </Border>

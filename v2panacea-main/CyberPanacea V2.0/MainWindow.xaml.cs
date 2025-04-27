@@ -482,7 +482,10 @@ namespace CyberPanacea_V2._0
             HideAllPages();
             SettingPage.Visibility = Visibility.Visible;
         }
-
+        private void setting(object sender, RoutedEventArgs e)
+        {
+            System.Windows.MessageBox.Show("Settings have been updated successfully!", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
         private void DeleteButton_Click(object sender,RoutedEventArgs e)
         {
             System.Windows.MessageBox.Show("deletebutton");
