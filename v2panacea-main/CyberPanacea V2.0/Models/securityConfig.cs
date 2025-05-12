@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
-namespace CyberPanacea_V2._0.Models
+namespace PacketProtection._0.Models
 {
     // Separate data model for serialization
     public class SecurityConfigData

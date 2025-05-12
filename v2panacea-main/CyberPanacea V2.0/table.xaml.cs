@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace CyberPanacea_V2._0
+namespace PacketProtection._0
 {
     public partial class table : Window
     {

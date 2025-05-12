@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PacketProtection", "CyberPanacea V2.0\PacketProtection.csproj", "{86FE69D2-3875-4B18-85C9-C78705D053F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyberPanacea-V2.0", "CyberPanacea V2.0\CyberPanacea-V2.0.csproj", "{86FE69D2-3875-4B18-85C9-C78705D053F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,8 +18,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9D87E710-843C-4FC7-8E2E-BE183E3501F5}
 	EndGlobalSection
 EndGlobal

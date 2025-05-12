@@ -1,11 +1,11 @@
 ﻿<Window 
-    x:Class="CyberPanacea_V2._0.MainWindow"
+    x:Class="PacketProtection._0.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-    xmlns:local="clr-namespace:CyberPanacea_V2._0"
+    xmlns:local="clr-namespace:PacketProtection._0"
     mc:Ignorable="d"
     Title="Cyber Panacea"
     MinWidth="800"
@@ -180,21 +180,20 @@
                         <Image Source="pack://application:,,,/Images/dos.png" Width="50"/>
                     </Button>
 
-                    
 
-                    <Button Style="{StaticResource menuButton}"
-                            Margin="07 40 07 00"  
-                            Click="Waf_Click">
-                        <Image Source="pack://application:,,,/Images/waf.png" Width="50"/>
 
-                    </Button>
+
 
                     <Button Style="{StaticResource menuButton}"
                             Click="RateLimiter_Click"
                             Margin="07 40 07 00">
                         <Image Source="pack://application:,,,/Images/api.png" Width="50"/>
                     </Button>
-
+                    <Button Style="{StaticResource menuButton}"
+                            Click="Ids_Click"
+                            Margin="07 40 07 00">
+                        <Image Source="pack://application:,,,/Images/ids.png" Width="50"/>
+                    </Button>
                     <Button Style="{StaticResource menuButton}"
                             Margin="07 40 07 00" 
                             Click="setting">

@@ -2,11 +2,11 @@
 using System.IO;
 using System.Windows;
 using Newtonsoft.Json;
-using CyberPanacea_V2._0.Models;
+using PacketProtection._0.Models;
 using System.Collections.ObjectModel;
 
 
-namespace CyberPanacea_V2._0.Services
+namespace PacketProtection._0.Services
 {
     public class ConfigurationService
     {

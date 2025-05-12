@@ -1,5 +1,5 @@
-﻿using CyberPanacea_V2._0.Models;
-using CyberPanacea_V2._0.Services;
+﻿using PacketProtection._0.Models;
+using PacketProtection._0.Services;
 using RealTimeProtection;
 using RansomwareProtector;
 using System;
@@ -15,7 +15,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
 using System.Windows.Input;
 
-namespace CyberPanacea_V2._0
+namespace PacketProtection._0
 {
 
 

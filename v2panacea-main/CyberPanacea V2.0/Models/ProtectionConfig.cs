@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CyberPanacea_V2._0.Models
+namespace PacketProtection._0.Models
 {
     public class ProtectionConfig
     {

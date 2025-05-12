@@ -5,7 +5,7 @@ using System.Security.Principal;
 using System.Windows;
 using System.Windows.Threading;
 
-namespace CyberPanacea_V2._0
+namespace PacketProtection._0
 {
     /// <summary>
     /// Interaction logic for App.xaml

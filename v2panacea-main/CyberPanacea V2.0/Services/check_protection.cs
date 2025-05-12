@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using Newtonsoft.Json;
 
-namespace CyberPanacea_V2._0.Services
+namespace PacketProtection._0.Services
 {
     public class SystemInfo
     {
